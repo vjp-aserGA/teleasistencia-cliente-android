@@ -387,6 +387,7 @@ public class ModificarPerfilActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                     if (response.isSuccessful()) {
+                        Utilidad.setUserLogged(response.body());
                         alternarPanelesCambioDatabase();
                         Toast.makeText(ModificarPerfilActivity.this, Constantes.TOAST_MODPERFIL_CAMBIODB_CORRECTO, Toast.LENGTH_SHORT).show();
                     } else {
