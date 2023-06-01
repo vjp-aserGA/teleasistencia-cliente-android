@@ -309,8 +309,6 @@ public class EditarUsuarioSistemaFragment extends Fragment {
                     @Override
                     public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                         if (response.isSuccessful()) {
-                            Usuario userModificado = response.body();
-                            Utilidad.setUserLogged(userModificado);
                             Toast.makeText(getContext(), Constantes.TOAST_USUARIOSISTEMA_OK_CREAR, Toast.LENGTH_SHORT).show();
                             cerrarFragment();
                         } else {
